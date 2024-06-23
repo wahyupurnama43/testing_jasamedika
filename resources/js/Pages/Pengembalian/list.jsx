@@ -65,35 +65,33 @@ export default function List({ auth, pengembalian }) {
         >
             <Head title="Dashboard" />
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4">
-                        <div className="mt-4">
-                            <form onSubmit={submit}>
-                                <InputLabel
-                                    htmlFor="pengembalian"
-                                    value="Nomor Plat"
-                                />
+            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4">
+                    <div className="mt-4">
+                        <form onSubmit={submit}>
+                            <InputLabel
+                                htmlFor="pengembalian"
+                                value="Nomor Plat"
+                            />
 
-                                <TextInput
-                                    id="pengembalian"
-                                    name="pengembalian"
-                                    className="mt-1 block w-full"
-                                    autoComplete="pengembalian"
-                                    onChange={(e) =>
-                                        setData("plat", e.target.value)
-                                    }
-                                    isFocused={true}
-                                />
-                            </form>
-                        </div>
-                        <DataTable
-                            data={pengembalian}
-                            columns={columns}
-                            columnAsFilter="pengguna"
-                            enableColumnsHiding
-                        />
+                            <TextInput
+                                id="pengembalian"
+                                name="pengembalian"
+                                className="mt-1 block w-full"
+                                autoComplete="pengembalian"
+                                onChange={(e) =>
+                                    setData("plat", e.target.value)
+                                }
+                                isFocused={true}
+                            />
+                        </form>
                     </div>
+                    <DataTable
+                        data={pengembalian}
+                        columns={columns}
+                        columnAsFilter="pengguna"
+                        enableColumnsHiding
+                    />
                 </div>
             </div>
         </AuthenticatedLayout>
